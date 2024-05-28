@@ -19,10 +19,10 @@ export async function login(formData: FormData) {
 
   if (error) {
     redirect('/error')
+  }else{
+    revalidatePath('/', 'layout')
+    redirect('/private')
   }
-
-  revalidatePath('/', 'layout')
-  redirect('/')
 }
 
 export async function signup(formData: FormData) {

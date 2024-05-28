@@ -14,12 +14,14 @@ const canInitSupabaseClient = () => {
 const isSupabaseConnected = canInitSupabaseClient();
 
 
-export default async function Header() {
+export default async function Header_loggedin() {
   return (
     <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
     <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
       aaa
       bbb
+      ccc
+      ddd
       {isSupabaseConnected && <AuthButton />}
     </div>
   </nav>
