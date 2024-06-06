@@ -2,7 +2,7 @@ import { createClient } from "@/utils/supabase/server";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export default async function AuthButton() {
+export default async function ButtonLogin() {
   const supabase = createClient();
 
   const {
@@ -21,7 +21,7 @@ export default async function AuthButton() {
     <div className="flex items-center gap-4">
       Hey, {user.email}!
       <form action={signOut}>
-        <button className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover">
+        <button className="py-2 px-3 flex rounded-md bg-gray-200 hover:bg-gray-500 text-xl">
           Logout
         </button>
       </form>
@@ -29,8 +29,8 @@ export default async function AuthButton() {
   ) : (
     <Link
       href="/login"
-      className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
-    >
+      className="py-2 px-3 flex rounded-md bg-gray-200 hover:bg-gray-500 text-xl"
+      >
       Login
     </Link>
   );

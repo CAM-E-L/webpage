@@ -17,8 +17,10 @@ const POST = async (req: any) => {
     console.log("requestData - name", requestData['name']);
     console.log("requestData - cam", requestData['cam'])
     console.log("requestData - cam - nodes", requestData['cam'].nodes)
+    console.log("requestData - welcomeYourGirl", requestData['welcomeYourGirl'])
 
-    if(false){
+
+    if(true){
         const supabase = createClient();
         const { error } = await supabase.from('countries').insert({ id: 444, name: requestData['cam'] })
 
@@ -28,3 +30,9 @@ const POST = async (req: any) => {
 }
 
 export { GET, POST };
+
+
+// participantID
+// CAM
+// experiment
+// type study (collaborative, individual)

@@ -1,8 +1,14 @@
 import { createClient } from "@/utils/supabase/server";
+
 import ConnectSupabaseSteps from "@/components/tutorial/ConnectSupabaseSteps";
 import SignUpUserSteps from "@/components/tutorial/SignUpUserSteps";
-import Header from "@/components/Header";
-import Header_loggedin from "@/components/Header_loggedin";
+
+
+import logoCAM from "../public/images/logoCAM.svg";
+import Image from "next/image";
+
+import ButtonInformation from "@/components/Buttons/Information";
+import ButtonGetStarted from "@/components/Buttons/GetStarted";
 
 export default async function Index() {
   const canInitSupabaseClient = () => {
@@ -22,6 +28,7 @@ export default async function Index() {
   const { data, error } = await supabase.auth.getUser();
   //console.log("error", error)
 
+  /*
   const { error3 } = await supabase.from('countries').insert({ id: 4, name: 'Denmark' })
 
   const { data: todos, error2 } = await supabase.from('countries').select('*')
@@ -29,42 +36,50 @@ export default async function Index() {
 
 
   const { error4 } = await supabase.from('countries').delete().eq('id', 1)
+*/
 
-
+  //     <div className="flex-1 w-full flex flex-col gap-20 items-center">
 
   return (
-    <div className="flex-1 w-full flex flex-col gap-20 items-center">
-      <div className="animate-in flex-1 flex flex-col gap-20 opacity-0 max-w-4xl px-3">
-        {!error ? <Header_loggedin /> : <Header />}
-        <main className="flex-1 flex flex-col gap-6">
-        <ul className="list-disc">
-  <li>Now this is a story all about how, my life got flipped turned upside down</li>
-</ul>
+    <div className="animate-in">
+      <main className="flex flex-col gap-5 max-w-6xl px-3 text-xl">
+        <div className="grid grid-cols-2 gap-2 place-items-center">
+          <div className="text-2xl font-semibold">
+          Cognitive Affective Map tools to easily create and integrate CAM studies into online experiments.
+          <p className="text-xl font-light text-gray-600"> Build fully functional accessible Cognitive Affective Map experiments faster than ever! </p>
+          </div>
+          <div>
+          <Image src={logoCAM.src} width={400} height={400} alt="CAM logo"/>
+          </div>
+        </div>
 
-<ol className="list-decimal">
-  <li>Now this is a story all about how, my life got flipped turned upside down</li>
-</ol>
+        <ul className="list-disc space-y-5 px-14 mt-5">
+          <li>
+            <span className="font-bold">Online based</span> - all our tools are running online so no need to setup any server (although you could)
+          </li>
+          <li>
+            <span className="font-bold">Free and open source</span> - all our tools have MIT license, you can use the CAM tools in any project, just don't forget to quote us
+          </li>
+          <li>
+            <span className="font-bold">Tested systematically</span> - all the different tools provided were tested to ensure best data quality
+          </li>
+        </ul>
 
-<ul className="list-none">
-  <li>Now this is a story all about how, my life got flipped turned upside down</li>
-</ul>
-
-<div className="grid grid-cols-2 gap-2">
-  <div className="bg-gray-200 row-span-3">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</div>
-  <div className="bg-gray-200">2</div>
-  <div className="bg-gray-200">3</div>
-  <div className="bg-gray-200">4</div>
-</div>
-
-
-
-
-          <h2 className="font-bold text-4xl mb-4">Next steps</h2>
-          {isSupabaseConnected ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
-        </main>
-      </div>
-
-      <footer className="w-full border-t border-t-foreground/10 p-8 flex justify-center text-center text-xs"></footer>
+        <div className="grid grid-cols-2 gap-10 place-items-center mx-40">
+          <div className="text-xl font-semibold">
+          For further information, please read the information page:
+          <p className="w-1/2 mt-3">
+            <ButtonInformation/> 
+          </p>
+          </div>
+          <div className="text-xl font-semibold">
+         If you just want to get started, please read the get started page:
+          <p className="w-1/2 mt-3">
+            <ButtonGetStarted/> 
+          </p>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }

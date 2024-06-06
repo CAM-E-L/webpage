@@ -1,5 +1,12 @@
 import { createClient } from "@/utils/supabase/server";
-import AuthButton from "./AuthButton";
+
+import ButtonHome from "./Buttons/Home";
+import ButtonInformation from "./Buttons/Information";
+import ButtonGetStarted from "./Buttons/GetStarted";
+
+import ButtonRegister from "./Buttons/Register";
+import ButtonLogin from "./Buttons/Login";
+
 
 const canInitSupabaseClient = () => {
   // This function is just for the interactive tutorial.
@@ -12,15 +19,31 @@ const canInitSupabaseClient = () => {
   }
 };
 const isSupabaseConnected = canInitSupabaseClient();
-
+const supabase = createClient();
 
 export default async function Header() {
-  return (
-    <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
+  const { data, error } = await supabase.auth.getUser();
+
+  return !error ? (
+    <nav className="w-full flex border-b h-16 mb-10 max-w-6xl">
     <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
       aaa
       bbb
-      {isSupabaseConnected && <AuthButton />}
+      ccc
+      ddd
+      {isSupabaseConnected && <ButtonLogin/>}
+    </div>
+  </nav>
+  ) : (
+    <nav className="w-full flex border-b h-16 mb-10 max-w-6xl">
+    <div className="w-full flex space-x-10 items-center p-5 text-sm justify-start">
+      <ButtonHome/>
+      <ButtonInformation/>
+      <ButtonGetStarted/>
+      </div>
+      <div className="w-full flex space-x-10 items-center p-5 text-sm justify-end">
+      {isSupabaseConnected && <ButtonRegister/>}
+      {isSupabaseConnected && <ButtonLogin/>}
     </div>
   </nav>
   );

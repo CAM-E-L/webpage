@@ -9,7 +9,7 @@ const nextConfig = {
         return [
             {
                 source: '/CAMEL',
-                destination: 'https://camgalaxy.github.io/' // '/html/index.html',
+                destination: 'https://camgalaxy.github.io/'
             },
         ];
     },
