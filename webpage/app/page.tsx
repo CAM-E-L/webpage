@@ -3,9 +3,9 @@ import { createClient } from "@/utils/supabase/server";
 import ConnectSupabaseSteps from "@/components/tutorial/ConnectSupabaseSteps";
 import SignUpUserSteps from "@/components/tutorial/SignUpUserSteps";
 
-
-import logoCAM from "../public/images/logoCAM.svg";
 import Image from "next/image";
+import logoCAM from "../public/images/logoCAM.svg";
+
 
 import ButtonInformation from "@/components/Buttons/Information";
 import ButtonGetStarted from "@/components/Buttons/GetStarted";
