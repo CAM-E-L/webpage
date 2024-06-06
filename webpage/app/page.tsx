@@ -22,13 +22,15 @@ export default async function Index() {
     }
   };
 
+
+    /*
   const isSupabaseConnected = canInitSupabaseClient();
 
   const supabase = createClient();
   const { data, error } = await supabase.auth.getUser();
   //console.log("error", error)
 
-  /*
+
   const { error3 } = await supabase.from('countries').insert({ id: 4, name: 'Denmark' })
 
   const { data: todos, error2 } = await supabase.from('countries').select('*')
