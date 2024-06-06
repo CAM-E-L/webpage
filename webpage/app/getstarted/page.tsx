@@ -8,7 +8,7 @@ export default function GetStartedPage() {
     <main className="flex flex-col gap-5 max-w-6xl px-3 text-xl">
       <div className="text-2xl font-semibold text-center">
         Step by step everything is explained to get started and to set up your
-        first study.
+        first study:
       </div>
 
       <div className="relative mt-5 text-left">

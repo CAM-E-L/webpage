@@ -1,4 +1,4 @@
-import AuthButton from "@/components/Buttons/Auth";
+import ButtonLogin from "@/components/Buttons/Login";
 import { createClient } from "@/utils/supabase/server";
 import FetchDataSteps from "@/components/tutorial/FetchDataSteps";
 import Header from "@/components/Header";
@@ -12,7 +12,17 @@ export default async function ProtectedPage() {
   } = await supabase.auth.getUser();
 
   if (!user) {
+    
+  return (
+    <div className="py-6 font-bold bg-purple-950 text-center">
+    This is a protected page that you can only see as an authenticated
+    user
+  </div>
+  );
+
     return redirect("/login");
+
+  
   }
 
   return (
@@ -24,7 +34,7 @@ export default async function ProtectedPage() {
         </div>
         <nav className="w-full flex justify-center border-b border-b-foreground/10 h-16">
           <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
-            <AuthButton />
+            <ButtonLogin />
           </div>
         </nav>
       </div>
