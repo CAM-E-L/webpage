@@ -14,8 +14,9 @@ export default async function ButtonLogin() {
 
     const supabase = createClient();
     await supabase.auth.signOut();
-    return redirect("/login");
+    return redirect("/private");
   };
+  
 
   return user ? (
     <div className="flex items-center gap-4">

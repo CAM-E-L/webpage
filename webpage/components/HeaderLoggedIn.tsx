@@ -18,33 +18,17 @@ const canInitSupabaseClient = () => {
     return false;
   }
 };
-
-
 const isSupabaseConnected = canInitSupabaseClient();
-const supabase = createClient();
 
-export default async function Header() {
-  const { data, error } = await supabase.auth.getUser();
+export default function HeaderLoggedIn() {
 
-  return !error ? (
+  return (
     <nav className="w-full flex border-b h-16 mb-10 max-w-6xl">
     <div className="w-full max-w-4xl flex justify-between items-center p-3 text-sm">
       aaa
       bbb
       ccc
       ddd
-      {isSupabaseConnected && <ButtonLogin/>}
-    </div>
-  </nav>
-  ) : (
-    <nav className="w-full flex border-b h-16 mb-10 max-w-6xl">
-    <div className="w-full flex space-x-10 items-center p-5 text-sm justify-start">
-      <ButtonHome/>
-      <ButtonInformation/>
-      <ButtonGetStarted/>
-      </div>
-      <div className="w-full flex space-x-10 items-center p-5 text-sm justify-end">
-      {isSupabaseConnected && <ButtonRegister/>}
       {isSupabaseConnected && <ButtonLogin/>}
     </div>
   </nav>

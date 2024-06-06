@@ -10,8 +10,16 @@ import logoCAM from "../public/images/logoCAM.svg";
 import ButtonInformation from "@/components/Buttons/Information";
 import ButtonGetStarted from "@/components/Buttons/GetStarted";
 
+import HeaderLoggedIn from '@/components/HeaderLoggedIn'
+import HeaderLoggedOut from '@/components/HeaderLoggedOut'
+
 export default async function Index() {
-  const canInitSupabaseClient = () => {
+  const supabase = createClient();
+  const { data, error } = await supabase.auth.getUser();
+
+    /*
+
+      const canInitSupabaseClient = () => {
     // This function is just for the interactive tutorial.
     // Feel free to remove it once you have Supabase connected.
     try {
@@ -22,8 +30,6 @@ export default async function Index() {
     }
   };
 
-
-    /*
   const isSupabaseConnected = canInitSupabaseClient();
 
   const supabase = createClient();
@@ -43,8 +49,8 @@ export default async function Index() {
   //     <div className="flex-1 w-full flex flex-col gap-20 items-center">
 
   return (
-    <div className="animate-in">
-      <main className="flex flex-col gap-5 max-w-6xl px-3 text-xl">
+      <main className="flex flex-col gap-5 max-w-6xl px-3 text-xl animate-in">
+           {!error ? <HeaderLoggedIn /> : <HeaderLoggedOut />}
         <div className="grid grid-cols-2 gap-2 place-items-center">
           <div className="text-2xl font-semibold">
           Cognitive Affective Map tools to easily create and integrate CAM studies into online experiments.
@@ -82,6 +88,5 @@ export default async function Index() {
           </div>
         </div>
       </main>
-    </div>
   );
 }
