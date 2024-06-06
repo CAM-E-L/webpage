@@ -17,6 +17,8 @@ export default async function LoginPage() {
       <input id="email" name="email" type="email" required />
       <label htmlFor="password">Password:</label>
       <input id="password" name="password" type="password" required />
+      <label htmlFor="age">Age:</label>
+      <input id="age" name="age" type="number" required />
       <button formAction={login}>Log in</button>
       <button formAction={signup}>Sign up</button>
     </form>
