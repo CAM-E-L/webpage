@@ -1,3 +1,5 @@
+'use server';
+
 import { createClient } from "@/utils/supabase/server";
 
 import HeaderLoggedIn from '@/components/HeaderLoggedIn'
@@ -8,9 +10,12 @@ import logoCAM from "../../public/images/logoCAM.svg";
 
 import Link from "next/link";
 
+import RegisterForm from "./actions";
+
 export default async function RegisterPage() {
   const supabase = createClient();
   const { data, error } = await supabase.auth.getUser();
+
 
   return (
     <main className="flex flex-col gap-5 w-full max-w-6xl px-3 text-xl animate-in">
@@ -18,6 +23,10 @@ export default async function RegisterPage() {
       <div className="text-2xl font-semibold text-center">
   Register account.
       </div>
+
+      <form>
+<RegisterForm />
+    </form>
 
     
     </main>
