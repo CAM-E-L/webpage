@@ -20,7 +20,7 @@ export default async function ProtectedPage() {
   </div>
   );
 
-    return redirect("/login");
+   // return redirect("/login");
 
   
   }
