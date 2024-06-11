@@ -5,8 +5,6 @@ import { createClient } from "@/utils/supabase/server";
 import HeaderLoggedIn from '@/components/HeaderLoggedIn'
 import HeaderLoggedOut from '@/components/HeaderLoggedOut'
 
-import LoginForm from "./loginForm";
-
 export default async function LoginPage() {
   const supabase = createClient();
   const { data, error } = await supabase.auth.getUser();
@@ -19,7 +17,12 @@ export default async function LoginPage() {
   <p className="text-sm font-light text-gray-600"> The log in button is disabled till you filled out the form. </p>
       </div>
           <form>
-<LoginForm />
+      <label htmlFor="email">Email:</label>
+      <input id="email" name="email" type="email" required />
+      <label htmlFor="password">Password:</label>
+      <input id="password" name="password" type="password" required />
+      <button formAction={login}>Log in</button>
+      <button formAction={signup}>Sign up</button>
     </form>
     </main>
   )
