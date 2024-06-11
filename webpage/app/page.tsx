@@ -12,8 +12,19 @@ import ButtonGetStarted from "@/components/Buttons/GetStarted";
 
 import HeaderLoggedIn from '@/components/HeaderLoggedIn'
 import HeaderLoggedOut from '@/components/HeaderLoggedOut'
+/*
+import { isMobile, isBrowser } from 'react-device-detect';
+import { redirect } from 'next/navigation'
+  console.log("isMobile, isBrowser", isMobile, isBrowser)
+if(isMobile){
+  redirect('/notes')
+}
+*/
 
 export default async function Index() {
+
+
+
   const supabase = createClient();
   const { data, error } = await supabase.auth.getUser();
 
