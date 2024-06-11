@@ -64,8 +64,8 @@ export default async function Index() {
            {!error ? <HeaderLoggedIn /> : <HeaderLoggedOut />}
         <div className="grid grid-cols-2 gap-2 place-items-center">
           <div className="md:text-2xl sd:text-sm font-semibold">
-          Cognitive Affective Map tools to easily create and integrate CAM studies into online experiments.
-          <p className="md:text-xl sd:text-sm font-light text-gray-600"> Build fully functional accessible Cognitive Affective Map experiments faster than ever! </p>
+          "Cognitive Affective Map" tools to easily create and integrate CAM studies into online experiments.
+          <p className="md:text-xl sd:text-sm font-light text-gray-600"> Build fully functional and accessible "Cognitive Affective Map" experiments - faster than ever! </p>
           </div>
           <div>
           <Image src={logoCAM.src} width={350} height={350} alt="CAM logo" className="sm-w-32"/>
@@ -74,13 +74,13 @@ export default async function Index() {
 
         <ul className="list-disc space-y-5 px-14 mt-5">
           <li>
-            <span className="font-bold">Online based</span> - all our tools are running online so no need to setup any server (although you could)
+            <span className="font-bold">Online based</span> - all our tools are running online, so there is no need to set up any server (although you could)
           </li>
           <li>
-            <span className="font-bold">Free and open source</span> - all our tools have MIT license, you can use the CAM tools in any project, just don't forget to quote us
+            <span className="font-bold">Free and open source</span> - all our tools have MIT license, you can use the CAM tools in any project (just don't forget to quote us)
           </li>
           <li>
-            <span className="font-bold">Tested systematically</span> - all the different tools provided were tested to ensure best data quality
+            <span className="font-bold">Tested systematically</span> - all of the provided tools were tested, ensuring best data quality
           </li>
         </ul>
 
