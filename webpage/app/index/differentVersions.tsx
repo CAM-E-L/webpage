@@ -55,7 +55,7 @@ export default function differentVersions() {
             you could)
           </li>
           <li>
-            <span className="font-bold">Free and open source</span> - all our
+            <span className="font-bold">Free and open source for non-commercial use</span> - all our
             tools have MIT license, you can use the CAM tools in any project
             (just don't forget to quote us)
           </li>
@@ -121,7 +121,7 @@ export default function differentVersions() {
             you could)
           </li>
           <li>
-            <span className="font-bold">Free and open source</span> - all our
+            <span className="font-bold">Free and open source for non-commercial use</span> - all our
             tools have MIT license, you can use the CAM tools in any project
             (just don't forget to quote us)
           </li>
