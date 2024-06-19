@@ -14,10 +14,10 @@ export default async function PrivatePage() {
     return redirect("/error");
   }else{
     return (
-      <div className="animate-in w-full max-w-6xl">
+      <main className="w-full max-w-6xl text-xl animate-in">
         {!error ? <HeaderLoggedIn /> : <HeaderLoggedOut />}
         <p>You are logged in and your email is: {data.user.email} and you are on the dashboard page.</p>
-      </div>
+      </main>
     );
   }
 }
