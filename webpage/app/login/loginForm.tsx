@@ -94,6 +94,7 @@ export default function LoginForm() {
       )}
 
       <button
+      type="submit"
         disabled={!isFormValid}
         formAction={login}
         className="py-2 mt-4 rounded-md bg-gray-400 hover:bg-gray-600 disabled:bg-red-200 text-xl"
