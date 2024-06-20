@@ -20,8 +20,6 @@ export default async function PrivatePage() {
   if (error || !data?.user) {
     return redirect("/error");
   }else{
-    console.log("email user", data?.user?.email);
-
     // get data from the database
     const { data: studies } = await supabase.from("studies").select();
 

@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 
+import { addCAMstudy } from "@/app/dashboard/actions";
+
 import { useState, useEffect } from "react";
 import {
   Button,
@@ -69,23 +71,23 @@ export default function ButtonAddExperiment() {
     setIsFormValid(Object.keys(errors).length === 0);
   };
 
-  /*
-  const handleContentChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement>
-  ) => {
-    setJsonContent(event.target.value);
+  const handleOpen = () => setOpen(!open);
 
-    let json;
-    try {
-      json = JSON.parse(event.target.value);
-      console.log("json", json);
-    } catch (err) {
-      console.log("json ERROR");
+  // Submit
+  const handleAddExperiment = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
+
+    if (isFormValid) {
+      console.log("Form submitted successfully!");
+
+      let json = JSON.parse(jsonContent);
+      await addCAMstudy(name, json.config, json.CAM, link);
+    } else {
+      console.log("Form has errors. Please correct them.");
     }
   };
-  */
-
-  const handleOpen = () => setOpen(!open);
 
   return (
     <>
@@ -103,7 +105,7 @@ export default function ButtonAddExperiment() {
         className="overflow-auto max-h-screen"
       >
         <DialogHeader placeholder="Dialog header placeholder">
-          In the following form you can add a new experiment:
+          In the following form you can add a new CAM study:
         </DialogHeader>
         <DialogBody placeholder="Dialog body placeholder" className="text-xl">
           If this is your first time setting up a study, it is higgly
@@ -191,7 +193,7 @@ export default function ButtonAddExperiment() {
             variant="gradient"
             color="green"
             disabled={!isFormValid}
-            onClick={handleOpen}
+            onClick={handleAddExperiment}
           >
             <span>Add a new study</span>
           </Button>
