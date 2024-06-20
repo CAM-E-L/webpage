@@ -7,6 +7,8 @@ import HeaderLoggedOut from "@/components/HeaderLoggedOut";
 
 import Link from "next/link";
 
+import ButtonAddExperiment from "@/components/Buttons/AddExperiment";
+
 export default async function PrivatePage() {
   const supabase = createClient();
   const { data, error } = await supabase.auth.getUser();
@@ -60,6 +62,9 @@ export default async function PrivatePage() {
           ))}
         </tbody>
       </table>
+      <p className="w-1/4 mt-3 mx-auto">
+              <ButtonAddExperiment />
+            </p>
       </main>
     );
   }
