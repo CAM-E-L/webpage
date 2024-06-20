@@ -24,7 +24,7 @@ export default async function PrivatePage() {
     return (
       <main className="w-full max-w-6xl text-xl animate-in">
         {!error ? <HeaderLoggedIn /> : <HeaderLoggedOut />}
-        <table className="table-auto text-left text-xl mx-auto">
+        <table className="table-auto text-left text-xl mx-auto w-full">
           <thead>
             <tr className="text-xl">
               <th className="border border-gray-300 px-2 py-2">Name Study</th>
@@ -70,7 +70,7 @@ export default async function PrivatePage() {
                 </td>
                 <td className="py-5 border border-gray-300">
                   <Link
-                    href={"/expermiment?id=" + index}
+                    href={"/study/" + study.namestudy}
                     className="px-1 text-blue-500 hover:underline"
                   >
                     Enter Experiment
