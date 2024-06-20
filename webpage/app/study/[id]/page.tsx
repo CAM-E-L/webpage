@@ -72,6 +72,9 @@ export default async function SingleStudy({
               <th className="border border-gray-300 px-2 py-2">
                 Number of drawn connections
               </th>
+              <th className="border border-gray-300 px-2 py-2">
+                Average valence
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -96,6 +99,7 @@ export default async function SingleStudy({
                 </td>
                 <td className="py-5 border border-gray-300 px-5">aa</td>
                 <td className="py-5 border border-gray-300">bb</td>
+                <td className="py-5 border border-gray-300">cc</td>
               </tr>
             ))}
           </tbody>
