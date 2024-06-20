@@ -24,8 +24,9 @@ export default function ButtonAddExperiment() {
   }>({});
 
   const [isFormValid, setIsFormValid] = useState(false);
-  var regexQuery = "^(https?:\\/\\/)?((([-a-z0-9]{1,63}\\.)*?[a-z0-9]([-a-z0-9]{0,253}[a-z0-9])?\\.[a-z]{2,63})|((\\d{1,3}\\.){3}\\d{1,3}))(:\\d{1,5})?((\\/|\\?)((%[0-9a-f]{2})|[-\\w\\+\\.\\?\\/@~#&=])*)?$";
-  var testUrl = new RegExp(regexQuery,"i");
+  var regexQuery =
+    "^(https?:\\/\\/)?((([-a-z0-9]{1,63}\\.)*?[a-z0-9]([-a-z0-9]{0,253}[a-z0-9])?\\.[a-z]{2,63})|((\\d{1,3}\\.){3}\\d{1,3}))(:\\d{1,5})?((\\/|\\?)((%[0-9a-f]{2})|[-\\w\\+\\.\\?\\/@~#&=])*)?$";
+  var testUrl = new RegExp(regexQuery, "i");
   useEffect(() => {
     validateForm();
   }, [name, jsonContent, link]);
@@ -40,24 +41,27 @@ export default function ButtonAddExperiment() {
       errors.name = "Name for CAM study must be at least 6 characters.";
     }
 
-    
     if (!jsonContent) {
       errors.jsonContent = "JSON is required.";
-    }else{
+    } else {
       try {
-        JSON.parse(jsonContent);
+        let json = JSON.parse(jsonContent);
+        let arrayJson = Object.keys(json);
+
+        if (!(arrayJson.includes("config") && arrayJson.includes("CAM"))) {
+          errors.jsonContent =
+            "JSON is valid, but do not contain the required fields (config and CAM).";
+        }
       } catch (err) {
         errors.jsonContent = "JSON is not valid.";
       }
     }
-  
 
     if (!link) {
       errors.link = "Link to redirect participants is required.";
-    }  else if (!testUrl.test(link)) {
+    } else if (!testUrl.test(link)) {
       errors.link = "Valid link is required.";
     }
-
 
     setErrors(errors);
     console.log(errors);
@@ -146,7 +150,7 @@ export default function ButtonAddExperiment() {
               value={jsonContent}
               onChange={(e) => setJsonContent(e.target.value)}
             />
-                     {errors.jsonContent && (
+            {errors.jsonContent && (
               <p className="text-red-500 text-lg">{errors.jsonContent}</p>
             )}
 
@@ -164,7 +168,7 @@ export default function ButtonAddExperiment() {
               value={link}
               onChange={(e) => setLink(e.target.value)}
             />
-                            {errors.link && (
+            {errors.link && (
               <p className="text-red-500 text-lg">{errors.link}</p>
             )}
           </div>
