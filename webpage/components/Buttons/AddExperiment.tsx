@@ -83,7 +83,14 @@ export default function ButtonAddExperiment() {
       console.log("Form submitted successfully!");
 
       let json = JSON.parse(jsonContent);
-      await addCAMstudy(name, json.config, json.CAM, link);
+      const getFeedback = await addCAMstudy(name, json.config, json.CAM, link);
+      if (getFeedback === null) {
+        alert(
+          "Study name already exists. Please choose another name. And click again on the button to add the study."
+        );
+      }else{
+        setOpen(!open)
+      }
     } else {
       console.log("Form has errors. Please correct them.");
     }
