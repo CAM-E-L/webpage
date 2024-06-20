@@ -54,7 +54,8 @@ export default async function PrivatePage() {
                   {study.namestudy}
                 </td>
                 <td className="py-5 border border-gray-300 px-5">
-                  {study.creation_date}
+                  {(new Date(study.creation_date).toLocaleDateString ()) + " ("  + (new Date(study.creation_date).toLocaleTimeString()) + ")"}
+
                 </td>
                 <td className="py-5 border border-gray-300 px-5">
                   {"Placeholder" + index}
