@@ -141,7 +141,8 @@ export default async function SingleStudy({
                 </td>
                 <td className="py-2 border border-gray-300">
                 <Link
-                       href={""}
+                       href={"http://127.0.0.1:5500/index.html?ShowResearcherButtons=true&link=http://localhost:3002/api/drawstudy?study=" + params.id + "&participantID=" + study.camid}
+                      target="_blank"
                     className="text-blue-500 hover:underline"
                   >
                     <button className="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-900">
