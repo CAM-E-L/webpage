@@ -65,8 +65,8 @@ export default async function PrivatePage() {
 
                 <td className="py-5 border border-gray-300 text-center">
                   <Link
-                    href={"/expermiment?id=" + index}
-                    className="px-1 text-blue-500 hover:underline"
+                  href={"https://camgalaxy.github.io/?link=http://localhost:3002/api/getstudy?study=" + study.namestudy + "&participantID="}
+                  className="px-1 text-blue-500 hover:underline"
                   >
                     <button className="px-5 py-2 bg-blue-500 text-white rounded hover:bg-blue-900">
                     Link Participants
