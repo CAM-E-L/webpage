@@ -139,12 +139,14 @@ export default async function SingleStudy({
                   {" "}
                   {study.avgvalence}
                 </td>
-                <td className="py-5 border border-gray-300">
-                  <Link
-                    href={""}
-                    className="px-1 text-blue-500 hover:underline"
+                <td className="py-2 border border-gray-300">
+                <Link
+                       href={""}
+                    className="text-blue-500 hover:underline"
                   >
+                    <button className="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-900">
                     draw CAM
+                    </button>
                   </Link>
                 </td>
               </tr>
