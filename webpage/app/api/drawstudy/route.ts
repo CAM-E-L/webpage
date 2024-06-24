@@ -14,6 +14,19 @@ const GET = async (req: any) => {
 
     const supabase = createClient();
 
+    /*
+    const [singleStudyConfig, singleStudyCAM] = await Promise.all([
+      supabase
+        .from("studies")
+        .select()
+        .eq("namestudy", searchParams.get('study')),
+      supabase
+        .from("collectedcams")
+        .select()
+        .eq("camid", searchParams.get('participantID'))
+    ]);
+    */
+
       if(searchParams.get('study') != null){
       // get default config
       const { data: singleStudyConfig } = await supabase

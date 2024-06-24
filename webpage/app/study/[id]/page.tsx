@@ -162,7 +162,7 @@ export default async function SingleStudy({
           </div>
           <div>
             {" "}
-            <ButtonDownloadExperiment />
+            <ButtonDownloadExperiment data={collectedCAMs} namestudy={params.id} />
           </div>
         </div>
       </main>
