@@ -20,19 +20,21 @@ const GET = async (req: any) => {
 
          // redirect to error page if no data is found
     if (singleStudy?.length === 0 || singleStudy === undefined || singleStudy === null) {
+        console.log("No data is found for respective study name");
         return redirect("/error"); // !!!
+        // return Response.json({ message: "No data is found for respective study name" });
       }else{
         var nameStudy = singleStudy[0]['namestudy'];
         var configCAM = singleStudy[0]['configcam'];
         var defaultCAM = singleStudy[0]['defaultcam'];
         var redirectLink = singleStudy[0]['redirectlink'];
 
-        
+        /*
         console.log("nameStudy", nameStudy);
         console.log("configCAM", configCAM);
         console.log("defaultCAM", defaultCAM);
         console.log("redirectLink", redirectLink);
-
+*/
         return Response.json({ nameStudy: nameStudy, configCAM: configCAM, defaultCAM: defaultCAM, redirectLink: redirectLink})
       }
 }
