@@ -10,7 +10,6 @@ import Link from "next/link";
 import ButtonDeleteExperiment from "@/components/Buttons/DeleteExperiment";
 import ButtonDownloadExperiment from "@/components/Buttons/DownloadExperiment";
 
-
 export default async function SingleStudy({
   params,
 }: {
@@ -68,7 +67,9 @@ export default async function SingleStudy({
               <th className="border border-gray-300 px-2 py-2">
                 Participant ID
               </th>
-              <th className="border border-gray-300 px-2 py-2">Date</th>
+              <th className="border border-gray-300 px-2 py-2">Date Start</th>
+              <th className="border border-gray-300 px-2 py-2">Date End</th>
+              <th className="border border-gray-300 px-2 py-2">Duration (in min.)</th>
               <th className="border border-gray-300 px-2 py-2">
                 Number of drawn concepts
               </th>
@@ -78,9 +79,7 @@ export default async function SingleStudy({
               <th className="border border-gray-300 px-2 py-2">
                 Average valence
               </th>
-              <th className="border border-gray-300 px-2 py-2">
-                Draw CAM
-              </th>
+              <th className="border border-gray-300 px-2 py-2">Draw CAM</th>
             </tr>
           </thead>
           <tbody>
@@ -103,6 +102,10 @@ export default async function SingleStudy({
                 <td className="py-5 border border-gray-300 px-5">
                   {"Placeholder" + index}
                 </td>
+                <td className="py-5 border border-gray-300 px-5">
+                  {"Placeholder" + index}
+                </td>
+                <td className="py-5 border border-gray-300 px-5">aa</td>
                 <td className="py-5 border border-gray-300 px-5">aa</td>
                 <td className="py-5 border border-gray-300">bb</td>
                 <td className="py-5 border border-gray-300">cc</td>
@@ -111,7 +114,7 @@ export default async function SingleStudy({
                     href={""}
                     className="px-1 text-blue-500 hover:underline"
                   >
-                   Draw
+                    to draw CAM
                   </Link>
                 </td>
               </tr>
