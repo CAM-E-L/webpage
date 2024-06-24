@@ -40,7 +40,7 @@ const POST = async (req: any) => {
  })
 }
   }else{
-    redirect('/error')
+    redirect('/error') // !!!
 }
 
 
