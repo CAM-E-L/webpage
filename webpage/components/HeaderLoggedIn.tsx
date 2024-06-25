@@ -9,6 +9,8 @@ import ButtonLogin from "./Buttons/Login";
 
 import ButtonDashboard from "./Buttons/Dashboard";
 
+import ButtonCAMELresearcher from "./Buttons/CAMELresearcher";
+
 
 export default function HeaderLoggedIn() {
 
@@ -17,6 +19,7 @@ export default function HeaderLoggedIn() {
 <div className="w-full flex space-x-10 items-center p-5 text-sm justify-start">
   <ButtonDashboard/>
   <ButtonOnlineDocumentation/>
+  <ButtonCAMELresearcher/>
   </div>
   <div className=".w-2/5 flex space-x-10 items-center p-5 text-sm justify-end">
   <ButtonLogin/>

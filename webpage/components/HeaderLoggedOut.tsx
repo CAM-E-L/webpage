@@ -2,9 +2,11 @@ import ButtonHome from "./Buttons/Home";
 import ButtonInformation from "./Buttons/Information";
 import ButtonGetStarted from "./Buttons/GetStarted";
 import ButtonOnlineDocumentation from "./Buttons/OnlineDocumentation";
+import ButtonCAMELparticipant from "./Buttons/CAMELparticipant";
 
 import ButtonRegister from "./Buttons/Register";
 import ButtonLogin from "./Buttons/Login";
+
 
 
 export default function HeaderLoggedOut() {
