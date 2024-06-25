@@ -174,7 +174,7 @@ export default async function SingleStudy({
         <div className="flex justify-center space-x-5 flex-row mt-5">
           <div>
             {" "}
-            <ButtonDeleteExperiment />
+            <ButtonDeleteExperiment currentStudy={decodeURIComponent(params.id)} />
           </div>
           <div>
             {" "}
