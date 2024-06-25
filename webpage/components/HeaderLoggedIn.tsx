@@ -16,7 +16,7 @@ export default function HeaderLoggedIn() {
 
   return (
 <nav className="w-full sm:flex border-b h-16 mb-10 max-w-6xl hidden">
-<div className="w-full flex space-x-10 items-center p-5 text-sm justify-start">
+<div className="w-full flex space-x-5 items-center p-5 text-sm justify-start">
   <ButtonDashboard/>
   <ButtonOnlineDocumentation/>
   <ButtonCAMELresearcher/>
