@@ -141,7 +141,7 @@ export default async function SingleStudy({
                 </td>
                 <td className="py-2 border border-gray-300">
                 <Link
-                       href={"https://camgalaxy.github.io/?ShowResearcherButtons=true&link=http://localhost:3002/api/drawstudy?study=" + params.id + "&participantID=" + study.camid}
+                       href={"https://camgalaxy.github.io/?ShowResearcherButtons=true&link=https://camadministrative.vercel.app/api/drawstudy?study=" + params.id + "&participantID=" + study.camid}
                       target="_blank"
                     className="text-blue-500 hover:underline"
                   >
