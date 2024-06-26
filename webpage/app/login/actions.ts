@@ -33,17 +33,17 @@ export async function resetpassword(email: string) {
   console.log("login resetpassword data", email)
   const supabase = createClient()
 
- const { data: getUser } = await supabase.from('researcher').select('email').eq('email', email)
-console.log("login resetpassword getUser", getUser)
+  const { data: getUser } = await supabase.from('researcher').select('email').eq('email', email)
+  console.log("login resetpassword getUser", getUser)
 
-if(getUser?.length == 0){
-  return null
-  }else{
-    const { error } = await supabase.auth.resetPasswordForEmail(email, {
-      redirectTo: 'https://camadministrative.vercel.app/updatepassword',
-    })
-    console.log("login resetpassword error", error)
+  if(getUser?.length == 0){
+    return null
+    }else{
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: 'http://localhost:3000/updatepassword' // 'https://camadministrative.vercel.app/updatepassword',
+      })
+      console.log("login resetpassword error", error)
 
-    return "email exists"
-  }
+      return "email exists"
+    }
 }
