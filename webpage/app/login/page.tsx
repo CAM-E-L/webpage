@@ -5,6 +5,8 @@ import HeaderLoggedOut from '@/components/HeaderLoggedOut'
 
 import LoginForm from "./loginForm";
 
+import ButtonForgotPassword from '@/components/Buttons/ForgotPassword'
+
 export default async function LoginPage() {
   const supabase = createClient();
   const { data, error } = await supabase.auth.getUser();
@@ -19,6 +21,9 @@ export default async function LoginPage() {
           <form>
 <LoginForm />
     </form>
+    <div className="sm:mx-auto sm:w-full sm:max-w-md flex flex-col px-10">
+    <ButtonForgotPassword />
+    </div>
     </main>
   )
 }
