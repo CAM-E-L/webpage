@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { addCAMstudy } from "@/app/dashboard/actions";
 
+import { resetpassword } from "@/app/login/actions";
+
 import { useState, useEffect } from "react";
 import {
   Button,
@@ -44,32 +46,28 @@ export default function ButtonForgotPassword() {
     setIsFormValid(Object.keys(errors).length === 0);
   };
 
-const handleOpen = () => setOpen(!open);
+  const handleOpen = () => setOpen(!open);
 
-// Submit
-const handleAddExperiment = async (
-  e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-) => {
-  e.preventDefault();
+  // Submit
+  const handleAddExperiment = async (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    e.preventDefault();
 
-  if (isFormValid) {
-    console.log("Form submitted successfully!");
+    if (isFormValid) {
+      console.log("Form submitted successfully!");
 
-    /*
-      const getFeedback = await addCAMstudy(name, json.config, json.CAM, link);
+      const getFeedback = await resetpassword(email);
       if (getFeedback === null) {
         alert(
-          "Study name already exists. Please choose another name. And click again on the button to add the study."
+          "Email does not exist. Please enter the email you have registered with."
         );
-      }else{
-        setOpen(!open)
+      } else {
+        alert("An email has been sent to you.");
+        setOpen(!open);
       }
-    } else {
-      console.log("Form has errors. Please correct them.");
     }
-      */
-  }
-}
+  };
 
   return (
     <>
@@ -87,30 +85,32 @@ const handleAddExperiment = async (
         className="overflow-auto max-h-screen"
       >
         <DialogHeader placeholder="Dialog header placeholder">
-Please enter your Email to reset your password.
+          Please enter your Email to reset your password.
         </DialogHeader>
         <DialogBody placeholder="Dialog body placeholder" className="text-xl">
-        In the following form please enter the email adress you have
-          registered yourself. We will send you an email with a link to reset your
-          password. Please check your spam folder if you do not receive the
+          In the following form please enter the email adress you have
+          registered yourself. We will send you an email with a link to reset
+          your password. Please check your spam folder if you do not receive the
           email within the next 5 minutes. If you still have problems, please
           contact us.
           <div className="mt-5 ml-3">
-          <label
-        htmlFor="Email"
-        className="block font-medium leading-6 text-gray-900"
-      >
-        Email address:
-      </label>
-      <input
-        id="email"
-        name="email"
-        className="w-4/5"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            <label
+              htmlFor="Email"
+              className="block font-medium leading-6 text-gray-900"
+            >
+              Email address:
+            </label>
+            <input
+              id="email"
+              name="email"
+              className="w-4/5"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email}</p>
+            )}
           </div>
         </DialogBody>
         <DialogFooter placeholder="Dialog footer placeholder">
@@ -139,4 +139,4 @@ Please enter your Email to reset your password.
       </Dialog>
     </>
   );
-};
+}
