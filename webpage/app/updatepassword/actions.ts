@@ -2,6 +2,9 @@
 
 import { createClient } from '@/utils/supabase/server'
 
+import { revalidatePath } from 'next/cache'
+import { redirect } from 'next/navigation'
+
 
 export async function updatePassword(password: string, accessToken: string ) {
   console.log("reset password", password)
@@ -15,7 +18,9 @@ export async function updatePassword(password: string, accessToken: string ) {
   console.log("error", error)
 
   if(!error){
-    return 'password updated'
+    console.log("Password was updated successfully. You are now logged in.");
+    revalidatePath('/', 'layout')
+    redirect('/dashboard')
 }else{
   return null
 }

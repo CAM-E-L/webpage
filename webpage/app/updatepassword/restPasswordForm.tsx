@@ -3,9 +3,6 @@
 import { useState, useEffect } from "react";
 import { updatePassword } from "./actions";
 
-import { revalidatePath } from 'next/cache'
-import { redirect } from 'next/navigation'
-
 export default function RestPasswordForm() {
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
@@ -57,14 +54,12 @@ export default function RestPasswordForm() {
        const getFeedback = updatePassword(password1, accessToken)
 
        if(getFeedback != null){
-        alert("Password updated successfully. You will be redirected to the login page.")
-        revalidatePath('/', 'layout')
-        redirect('/login')
+        console.log("Form update password has no errors.");
+       }else{
+          alert("Please try again it was not possible to reset your password.")
        }
       }
-    } else {
-      console.log("Form update password has errors.");
-    }
+    } 
   };
 
 

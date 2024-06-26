@@ -40,7 +40,7 @@ export async function resetpassword(email: string) {
     return null
     }else{
       const { error } = await supabase.auth.resetPasswordForEmail(email, {
-        redirectTo: 'http://localhost:3000/updatepassword' // 'https://camadministrative.vercel.app/updatepassword',
+        redirectTo: 'https://camadministrative.vercel.app/updatepassword' // 'http://localhost:3000/updatepassword',
       })
       console.log("login resetpassword error", error)
 
