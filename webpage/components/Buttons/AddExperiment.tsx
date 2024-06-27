@@ -43,7 +43,7 @@ export default function ButtonAddExperiment() {
       errors.name = "Name for CAM study must be at least 6 characters.";
     } else if (/\s/.test(name)) {
       errors.name = "Name for CAM study should not contain any whitespace.";
-    } else if (/[^a-zA-Z0-9]/.test(name)) {
+    } else if (/[^a-zA-Z0-9_]/.test(name)) {
       errors.name = "Name for CAM study should not contain special characters (only letters and numbers).";
     }
 
