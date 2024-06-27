@@ -26,7 +26,7 @@ export default async function SingleStudy({
     const { data: collectedCAMs } = await supabase
       .from("collectedcams")
       .select()
-      .eq("namestudy", decodeURIComponent(params.id));
+      .eq("namestudy", params.id);
 
     var arrayNumConcepts: number[] = [];
     var arrayAvgValence: number[] = [];
@@ -54,7 +54,7 @@ export default async function SingleStudy({
     return (
       <main className="w-full max-w-6xl text-xl animate-in">
         {!error ? <HeaderLoggedIn /> : <HeaderLoggedOut />}
-        <div className="font-bold text-2xl text-center mb-5">{decodeURIComponent(params.id)}</div>
+        <div className="font-bold text-2xl text-center mb-5">{params.id}</div>
 
         <div className="flex justify-center space-x-5 flex-row mb-5">
           <div className="flex-col flex w-64">
@@ -174,7 +174,7 @@ export default async function SingleStudy({
         <div className="flex justify-center space-x-5 flex-row mt-5">
           <div>
             {" "}
-            <ButtonDeleteExperiment currentStudy={decodeURIComponent(params.id)} />
+            <ButtonDeleteExperiment currentStudy={params.id} />
           </div>
           <div>
             {" "}
