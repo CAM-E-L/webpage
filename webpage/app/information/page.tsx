@@ -73,7 +73,7 @@ export default async function InformationPage() {
           It is possible to set up CAM studies using a visual interface in which
           all kind of adjustments are possible (see
           <Link
-            href="https://camtools-documentation.readthedocs.io/en/master/Cognitive-Affective%20Map%20extended%20logic/#define-your-config-file"
+            href="https://camtools-documentation.readthedocs.io/en/master/Data%20Collection%20Tool/#define-your-config-file"
             className="px-1 text-blue-500 hover:underline"
             target="_blank"
           >
@@ -97,11 +97,11 @@ export default async function InformationPage() {
           Using the visual interface of the data analysis tool, data can be
           easily omputer-assisted summarized and analyzed (select
           <Link
-            href="https://camtools-documentation.readthedocs.io/en/master/CAM-App/"
+            href="https://camtools-documentation.readthedocs.io/en/master/Data%20Analysis%20Tool/"
             className="pl-1 text-blue-500 hover:underline"
             target="_blank"
           >
-            CAM-App documentation
+            Data Analysis Tool documentation
           </Link>
           ).
         </li>
