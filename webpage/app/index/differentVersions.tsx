@@ -38,7 +38,8 @@ export default function differentVersions() {
 
         <div className="grid grid-cols-1 place-items-center px-2 mt-5">
           <div className="text-sm font-semibold">
-            Cognitive-Affective Maps <i>extended logic</i> - Tools to Collect and Analyze Attitudes and Belief Systems
+            Cognitive-Affective Maps <i>extended logic</i> - Tools to Collect
+            and Analyze Attitudes and Belief Systems
             <p className="text-sm font-light text-gray-600">
               {" "}
               Build fully functional and accessible "Cognitive Affective Map"
@@ -54,9 +55,12 @@ export default function differentVersions() {
             you could)
           </li>
           <li>
-            <span className="font-bold">Free and open source for non-commercial use</span> - all our
-            tools have MIT license, you can use the tools of the software package "Cognitive-Affective Maps <i>extended logic</i>" in any project
-            (just don't forget to quote us)
+            <span className="font-bold">
+              Free and open source for non-commercial use
+            </span>{" "}
+            - all our tools have MIT license, you can use the tools of the
+            software package "Cognitive-Affective Maps <i>extended logic</i>" in
+            any project (just don't forget to quote us)
           </li>
           <li>
             <span className="font-bold">Tested systematically</span> - all of
@@ -69,21 +73,23 @@ export default function differentVersions() {
         </div>
         <ul className="text-sm list-disc space-y-2 px-5 mt-5">
           <li>
-            <span className="font-bold">Data Collection Tool</span> -
-           configure CAM studies and collect CAMs
+            <span className="font-bold">Data Collection Tool</span> - configure
+            CAM studies and collect CAMs
           </li>
           <li>
-            <span className="font-bold">Data Analysis Tool</span> - application (Shiny) to analyze collected CAM data
+            <span className="font-bold">Data Analysis Tool</span> - application
+            (Shiny) to analyze collected CAM data
           </li>
           <li>
-            <span className="font-bold">Administrative Panel</span> - setting up studies with different designs (please use a Laptop or a
-            desktop computer to set up a study)
+            <span className="font-bold">Administrative Panel</span> - setting up
+            studies with different designs (please use a Laptop or a desktop
+            computer to set up a study)
           </li>
         </ul>
         <div className="text-sm font-semibold mt-5 mb-5">
           For further information, please check out the online documentation:
           <p className="w-1/2 mt-3">
-            <ButtonOnlineDocumentation/>
+            <ButtonOnlineDocumentation />
           </p>
         </div>
       </div>
@@ -93,7 +99,8 @@ export default function differentVersions() {
       <div>
         <div className="grid grid-cols-2 gap-2 place-items-center">
           <div className="text-2xl font-semibold">
-          Cognitive-Affective Maps <i>extended logic</i> - Tools to Collect and Analyze Attitudes and Belief Systems
+            Cognitive-Affective Maps <i>extended logic</i> - Tools to Collect
+            and Analyze Attitudes and Belief Systems
             <p className="text-xl font-light text-gray-600">
               {" "}
               Build fully functional and accessible "Cognitive Affective Map"
@@ -118,9 +125,12 @@ export default function differentVersions() {
             you could)
           </li>
           <li>
-            <span className="font-bold">Free and open source for non-commercial use</span> - all our
-            tools have MIT license, you can use the tools of the software package "Cognitive-Affective Maps <i>extended logic</i>" in any project
-            (just don't forget to quote us)
+            <span className="font-bold">
+              Free and open source for non-commercial use
+            </span>{" "}
+            - all our tools have MIT license, you can use the tools of the
+            software package "Cognitive-Affective Maps <i>extended logic</i>" in
+            any project (just don't forget to quote us)
           </li>
           <li>
             <span className="font-bold">Tested systematically</span> - all of

@@ -15,7 +15,8 @@ export default async function InformationPage() {
     <main className="flex flex-col gap-5 max-w-6xl px-3 text-xl animate-in">
       {!error ? <HeaderLoggedIn /> : <HeaderLoggedOut />}
       <div className="text-2xl font-semibold text-center">
-        Thank you for checking out our software package "Cognitive-Affective Maps <i>extended logic</i>"!
+        Thank you for checking out our software package "Cognitive-Affective
+        Maps <i>extended logic</i>"!
       </div>
 
       <div className="mb-5">
@@ -31,7 +32,8 @@ export default async function InformationPage() {
           <Image src={logoCAM.src} width={300} height={300} alt="CAM logo" />
         </div>
         <div className="text-xl font-semibold text-left">
-       The software package "Cognitive-Affective Maps <i>extended logic</i>" encompass the following tools:
+          The software package "Cognitive-Affective Maps <i>extended logic</i>"
+          encompass the following tools:
           <p className="text-xl font-light">
             <ul className="list-disc space-y-2 px-14 mt-5">
               <li>
@@ -39,10 +41,12 @@ export default async function InformationPage() {
                 configure CAM studies and collect CAMs
               </li>
               <li>
-                <span className="font-bold">Data Analysis Tool</span> - application (Shiny) to analyze collected CAM data
+                <span className="font-bold">Data Analysis Tool</span> -
+                application (Shiny) to analyze collected CAM data
               </li>
               <li>
-                <span className="font-bold">Administrative Panel</span> - setting up studies with different designs (you are currently on)
+                <span className="font-bold">Administrative Panel</span> -
+                setting up studies with different designs (you are currently on)
               </li>
             </ul>
             <p className="mt-5">
@@ -90,8 +94,8 @@ export default async function InformationPage() {
           ).
         </li>
         <li>
-          Using the visual interface of the data analysis tool, data can be easily omputer-assisted 
-          summarized and analyzed (select
+          Using the visual interface of the data analysis tool, data can be
+          easily omputer-assisted summarized and analyzed (select
           <Link
             href="https://camtools-documentation.readthedocs.io/en/master/CAM-App/"
             className="pl-1 text-blue-500 hover:underline"
@@ -118,9 +122,9 @@ export default async function InformationPage() {
           (for inspiration, see future features sections in the documentation).
         </li>
         <li>
-          If you want to extend the features of the data analysis tool you can freely
-          adjust our written functions in R/ Python or write your own (check out our
-          source code).
+          If you want to extend the features of the data analysis tool you can
+          freely adjust our written functions in R/ Python or write your own
+          (check out our source code).
         </li>
       </ul>
 
