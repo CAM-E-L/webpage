@@ -25,3 +25,8 @@ This software has been developed by:
 To cite this software, please reference our article:
 
 > Fenn, J., Gouret, F., Gorki, M., Reuter, L., Gros, W., Hüttner, P., & Kiesel, A. (under review). _Cognitive-Affective Maps Extended Logic: Proposing Tools to Collect and Analyze Attitudes and Belief Systems._
+
+
+### Remark:
+
+Website is hosted on Vercel (<https://vercel.com/>), whereby I link the following GitHub repository to my deployment: <https://github.com/FennStatistics/camadministrative>
